@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="ace-builds-1.4.13/src-noconflict/ace.js"></script>
+    <script type="text/javascript" src="ace-builds-1.4.13/src-noconflict/ext-language_tools.js"></script>
+    <title>Code Editor</title>
+  </head>
+  <body>
+    <div class="panel-menu">
+      <label for="theme">Select any Theme: </label>
+      <select id="themes" onchange="changeMode()" class="selectOption">
+        <option class="option" value="monokai">Monokai (Default)</option>
+        <option class="option" value="ambiance">Ambiance</option>
+        <option class="option" value="chaos">Chaos</option>
+        <option class="option" value="chrome">Chrome</option>
+        <option class="option" value="clouds">Clouds</option>
+        <option class="option" value="clouds_midnight">Clouds Midnight</option>
+        <option class="option" value="cobalt">Cobalt</option>
+        <option class="option" value="crimson_editor">Crimson Editor</option>
+        <option class="option" value="dawn">Dawn</option>
+        <option class="option" value="dracula">Dracula</option>
+        <option class="option" value="dreamweaver">Dreamweaver</option>
+        <option class="option" value="eclipse">Eclipse</option>
+        <option class="option" value="github">Github</option>
+        <option class="option" value="gob">Gob</option>
+        <option class="option" value="gruvbox">Gruvbox</option>
+        <option class="option" value="idle_fingers">Idl Fingers</option>
+        <option class="option" value="iplastic">Iplastic</option>
+        <option class="option" value="katzenmilch">Katzenmilch</option>
+        <option class="option" value="kr_theme">Kr Theme</option>
+        <option class="option" value="kuroir">Kuroir</option>
+        <option class="option" value="merbivore">Merbivore</option>
+        <option class="option" value="merbivore_soft">Merbivore Soft</option>
+        <option class="option" value="mono_industrial">Mono Industria</option>
+        <option class="option" value="pastel_on_dark">Pastel on Dark</option>
+        <option class="option" value="solarized_dark">Solarized Dark</option>
+        <option class="option" value="solarized_light">Solarized Light</option>
+        <option class="option" value="sqlserver">SQLserver</option>
+        <option class="option" value="terminal">Terminal</option>
+        <option class="option" value="textmate">Textmate</option>
+        <option class="option" value="tomorrow">Tomorrow</option>
+        <option class="option" value="tomorrow_night">Tomorrow Night</option>
+        <option class="option" value="tomorrow_night_blue">Tomorrow Night Blue</option>
+        <option class="option" value="tomorrow_night_bright">Tomorrow Night Bright</option>
+        <option class="option" value="tomorrow_night_eighties">Tomorrow Night Eighties</option>
+        <option class="option" value="twilight">Twilight</option>
+        <option class="option" value="vibrant_ink">Vibrant Ink</option>
+        <option class="option" value="xcode">Xcode</option>
+      </select>
+      <label for="song">Select a Song: </label>
+        <audio src="./Audio/Christmas Star.mp3" type="audio/mpeg" id="Christmas Star"></audio>
+        <audio src="./Audio/Rain and Nostalgia.mp3" type="audio/mpeg" id="Rain and Nostalgia"></audio>
+        <audio src="./Audio/Calm River.mp3" type="audio/mpeg" id="Calm River"></audio>
+        <audio src="./Audio/Follow your destiny.mp3" type="audio/mpeg" id="Follow your destiny"></audio>
+        <audio src="./Audio/Myter.mp3" type="audio/mpeg" id="Myter"></audio>
+      <select id="music-list" class="selectOption">
+        <option class="song" value="Christmas Star">Christmas Star</option>
+        <option class="song" value="Rain and Nostalgia">Rain and Nostalgia</option>
+        <option class="song" value="Calm River">Calm River</option>
+        <option class="song" value="Follow your destiny">Follow your destiny</option>
+        <option class="song" value="Myter">Myter</option>
+      </select>
+      <button onclick="playSong()" class="btn">Play song <i class="fas fa-music"></i></button>
+      <button onclick="pauseSong()" class="btn">Pause song <i class="fas fa-play"></i></button>
+    </div>
+    <div class="code-editor">
+      <div class="coding-area">
+        <div class="program" id="html" placeholder="HTML"spellcheck="false"></div>
+        <div class="program" id="css" placeholder="CSS" spellcheck="false"></div>
+        <div class="program" id="js" placeholder="JS" spellcheck="false"></div>
+      </div>
+      <div class="result">
+        <iframe id="code-result"></iframe>
+      </div>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
